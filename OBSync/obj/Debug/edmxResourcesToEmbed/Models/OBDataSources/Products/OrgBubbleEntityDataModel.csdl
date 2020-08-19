@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OrgBubbleDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="facebook_accounts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="fullname" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="official" Type="Int32" />
+    <Property Name="login_type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="access_token" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="facebook_posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="account" Type="Int32" />
+    <Property Name="category" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="group" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="time_post" Type="DateTime" />
+    <Property Name="delay" Type="Int32" />
+    <Property Name="time_delete" Type="Int32" />
+    <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_caption">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="content" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_coupons">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="price" Type="Single" />
+    <Property Name="expiration_date" Type="DateTime" />
+    <Property Name="packages" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_custom_page">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="slug" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="content" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_file_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="file_name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="image_type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="file_ext" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="file_size" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="is_image" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="image_width" Type="Int32" />
+    <Property Name="image_height" Type="Int32" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_groups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="created" Type="DateTime" />
+    <Property Name="changed" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_lang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="slug" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="general_lang_list">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="icon" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="is_default" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="general_packages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="price_monthly" Type="Single" />
+    <Property Name="price_annually" Type="Single" />
+    <Property Name="number_accounts" Type="Int32" />
+    <Property Name="is_default" Type="Int32" />
+    <Property Name="trial_day" Type="Int32" />
+    <Property Name="permission" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="sort" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_payment_history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="package" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="transaction_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="plan" Type="Int32" />
+    <Property Name="amount" Type="Single" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_payment_subscriptions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="package" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="billing_agreement_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="plan" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_proxies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="limit" Type="Int32" />
+    <Property Name="package" Type="Int32" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_purchase">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="purchase_code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="version" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="general_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="admin" Type="Int32" />
+    <Property Name="login_type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="fullname" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="package" Type="Int32" />
+    <Property Name="expiration_date" Type="DateTime" />
+    <Property Name="timezone" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="permission" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="settings" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="activation_key" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="reset_key" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="history_ip" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="instagram_accounts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="proxy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="default_proxy" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="instagram_activities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="account" Type="Int32" />
+    <Property Name="action" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="time" Type="DateTime" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="settings" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="instagram_activities_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="action" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="media_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="instagram_analytics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="next_action" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="instagram_analytics_stats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="account" Type="Int32" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="instagram_posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="account" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="time_post" Type="DateTime" />
+    <Property Name="delay" Type="Int32" />
+    <Property Name="time_delete" Type="Int32" />
+    <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="instagram_sessions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="settings" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="cookies" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="last_modified" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="linkedin_accounts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="access_token" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="linkedin_posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="account" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="time_post" Type="DateTime" />
+    <Property Name="delay" Type="Int32" />
+    <Property Name="time_delete" Type="Int32" />
+    <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="pinterest_accounts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="login_type" Type="Int32" />
+    <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="app_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="app_secret" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="proxy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="default_proxy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="access_token" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="pinterest_posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="account" Type="Int32" />
+    <Property Name="board" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="time_post" Type="DateTime" />
+    <Property Name="delay" Type="Int32" />
+    <Property Name="time_delete" Type="Int32" />
+    <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="twitter_accounts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="access_token" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="twitter_posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="account" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="time_post" Type="DateTime" />
+    <Property Name="delay" Type="Int32" />
+    <Property Name="time_delete" Type="Int32" />
+    <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="general_sessions">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="ip_address" />
+      <PropertyRef Name="timestamp" />
+      <PropertyRef Name="data" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="timestamp" Type="Int64" Nullable="false" />
+    <Property Name="data" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="OrgBubbleDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="facebook_accounts" EntityType="Self.facebook_accounts" />
+    <EntitySet Name="facebook_posts" EntityType="Self.facebook_posts" />
+    <EntitySet Name="general_caption" EntityType="Self.general_caption" />
+    <EntitySet Name="general_coupons" EntityType="Self.general_coupons" />
+    <EntitySet Name="general_custom_page" EntityType="Self.general_custom_page" />
+    <EntitySet Name="general_file_manager" EntityType="Self.general_file_manager" />
+    <EntitySet Name="general_groups" EntityType="Self.general_groups" />
+    <EntitySet Name="general_lang" EntityType="Self.general_lang" />
+    <EntitySet Name="general_lang_list" EntityType="Self.general_lang_list" />
+    <EntitySet Name="general_options" EntityType="Self.general_options" />
+    <EntitySet Name="general_packages" EntityType="Self.general_packages" />
+    <EntitySet Name="general_payment_history" EntityType="Self.general_payment_history" />
+    <EntitySet Name="general_payment_subscriptions" EntityType="Self.general_payment_subscriptions" />
+    <EntitySet Name="general_proxies" EntityType="Self.general_proxies" />
+    <EntitySet Name="general_purchase" EntityType="Self.general_purchase" />
+    <EntitySet Name="general_users" EntityType="Self.general_users" />
+    <EntitySet Name="instagram_accounts" EntityType="Self.instagram_accounts" />
+    <EntitySet Name="instagram_activities" EntityType="Self.instagram_activities" />
+    <EntitySet Name="instagram_activities_log" EntityType="Self.instagram_activities_log" />
+    <EntitySet Name="instagram_analytics" EntityType="Self.instagram_analytics" />
+    <EntitySet Name="instagram_analytics_stats" EntityType="Self.instagram_analytics_stats" />
+    <EntitySet Name="instagram_posts" EntityType="Self.instagram_posts" />
+    <EntitySet Name="instagram_sessions" EntityType="Self.instagram_sessions" />
+    <EntitySet Name="linkedin_accounts" EntityType="Self.linkedin_accounts" />
+    <EntitySet Name="linkedin_posts" EntityType="Self.linkedin_posts" />
+    <EntitySet Name="pinterest_accounts" EntityType="Self.pinterest_accounts" />
+    <EntitySet Name="pinterest_posts" EntityType="Self.pinterest_posts" />
+    <EntitySet Name="twitter_accounts" EntityType="Self.twitter_accounts" />
+    <EntitySet Name="twitter_posts" EntityType="Self.twitter_posts" />
+    <EntitySet Name="general_sessions" EntityType="Self.general_sessions" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="orgbubble_data_viewsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="orgbubble_socialmedia_posts">
+    <Key>
+      <PropertyRef Name="socialmedia" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="socialmedia" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="account" Type="Int32" />
+    <Property Name="category_or_type" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="group" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="time_post" Type="DateTime" />
+    <Property Name="delay" Type="Int32" />
+    <Property Name="time_delete" Type="Int32" />
+    <Property Name="result" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityContainer Name="orgbubble_data_viewsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="orgbubble_socialmedia_posts" EntityType="Self.orgbubble_socialmedia_posts" />
+    <EntitySet Name="orgbubble_socialmedia_accounts" EntityType="orgbubble_data_viewsModel.orgbubble_socialmedia_accounts" />
+  </EntityContainer>
+  <EntityType Name="orgbubble_socialmedia_accounts">
+    <Key>
+      <PropertyRef Name="socialmedia" />
+    </Key>
+    <Property Name="socialmedia" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="pid" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="fullname" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+</Schema>

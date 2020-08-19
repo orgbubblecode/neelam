@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OrgBubbleDbModelStoreContainer" CdmEntityContainer="OrgBubbleDbEntities">
+    <EntitySetMapping Name="facebook_accounts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.facebook_accounts">
+        <MappingFragment StoreEntitySet="facebook_accounts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="official" ColumnName="official" />
+          <ScalarProperty Name="login_type" ColumnName="login_type" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="access_token" ColumnName="access_token" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="facebook_posts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.facebook_posts">
+        <MappingFragment StoreEntitySet="facebook_posts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="time_post" ColumnName="time_post" />
+          <ScalarProperty Name="delay" ColumnName="delay" />
+          <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_caption">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_caption">
+        <MappingFragment StoreEntitySet="general_caption">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_coupons">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_coupons">
+        <MappingFragment StoreEntitySet="general_coupons">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+          <ScalarProperty Name="packages" ColumnName="packages" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_custom_page">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_custom_page">
+        <MappingFragment StoreEntitySet="general_custom_page">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_file_manager">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_file_manager">
+        <MappingFragment StoreEntitySet="general_file_manager">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="image_type" ColumnName="image_type" />
+          <ScalarProperty Name="file_ext" ColumnName="file_ext" />
+          <ScalarProperty Name="file_size" ColumnName="file_size" />
+          <ScalarProperty Name="is_image" ColumnName="is_image" />
+          <ScalarProperty Name="image_width" ColumnName="image_width" />
+          <ScalarProperty Name="image_height" ColumnName="image_height" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_groups">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_groups">
+        <MappingFragment StoreEntitySet="general_groups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_lang">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_lang">
+        <MappingFragment StoreEntitySet="general_lang">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_lang_list">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_lang_list">
+        <MappingFragment StoreEntitySet="general_lang_list">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_options">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_options">
+        <MappingFragment StoreEntitySet="general_options">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_packages">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_packages">
+        <MappingFragment StoreEntitySet="general_packages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="price_monthly" ColumnName="price_monthly" />
+          <ScalarProperty Name="price_annually" ColumnName="price_annually" />
+          <ScalarProperty Name="number_accounts" ColumnName="number_accounts" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="trial_day" ColumnName="trial_day" />
+          <ScalarProperty Name="permission" ColumnName="permission" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_payment_history">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_payment_history">
+        <MappingFragment StoreEntitySet="general_payment_history">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="package" ColumnName="package" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="transaction_id" ColumnName="transaction_id" />
+          <ScalarProperty Name="plan" ColumnName="plan" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_payment_subscriptions">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_payment_subscriptions">
+        <MappingFragment StoreEntitySet="general_payment_subscriptions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="package" ColumnName="package" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="billing_agreement_id" ColumnName="billing_agreement_id" />
+          <ScalarProperty Name="plan" ColumnName="plan" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_proxies">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_proxies">
+        <MappingFragment StoreEntitySet="general_proxies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="limit" ColumnName="limit" />
+          <ScalarProperty Name="package" ColumnName="package" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_purchase">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_purchase">
+        <MappingFragment StoreEntitySet="general_purchase">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="purchase_code" ColumnName="purchase_code" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_users">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_users">
+        <MappingFragment StoreEntitySet="general_users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="admin" ColumnName="admin" />
+          <ScalarProperty Name="login_type" ColumnName="login_type" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="package" ColumnName="package" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+          <ScalarProperty Name="timezone" ColumnName="timezone" />
+          <ScalarProperty Name="permission" ColumnName="permission" />
+          <ScalarProperty Name="settings" ColumnName="settings" />
+          <ScalarProperty Name="activation_key" ColumnName="activation_key" />
+          <ScalarProperty Name="reset_key" ColumnName="reset_key" />
+          <ScalarProperty Name="history_ip" ColumnName="history_ip" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instagram_accounts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_accounts">
+        <MappingFragment StoreEntitySet="instagram_accounts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="proxy" ColumnName="proxy" />
+          <ScalarProperty Name="default_proxy" ColumnName="default_proxy" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instagram_activities">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_activities">
+        <MappingFragment StoreEntitySet="instagram_activities">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="settings" ColumnName="settings" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instagram_activities_log">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_activities_log">
+        <MappingFragment StoreEntitySet="instagram_activities_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="media_id" ColumnName="media_id" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instagram_analytics">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_analytics">
+        <MappingFragment StoreEntitySet="instagram_analytics">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="next_action" ColumnName="next_action" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instagram_analytics_stats">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_analytics_stats">
+        <MappingFragment StoreEntitySet="instagram_analytics_stats">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instagram_posts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_posts">
+        <MappingFragment StoreEntitySet="instagram_posts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="time_post" ColumnName="time_post" />
+          <ScalarProperty Name="delay" ColumnName="delay" />
+          <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instagram_sessions">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_sessions">
+        <MappingFragment StoreEntitySet="instagram_sessions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="settings" ColumnName="settings" />
+          <ScalarProperty Name="cookies" ColumnName="cookies" />
+          <ScalarProperty Name="last_modified" ColumnName="last_modified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="linkedin_accounts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.linkedin_accounts">
+        <MappingFragment StoreEntitySet="linkedin_accounts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="access_token" ColumnName="access_token" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="linkedin_posts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.linkedin_posts">
+        <MappingFragment StoreEntitySet="linkedin_posts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="time_post" ColumnName="time_post" />
+          <ScalarProperty Name="delay" ColumnName="delay" />
+          <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pinterest_accounts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.pinterest_accounts">
+        <MappingFragment StoreEntitySet="pinterest_accounts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="login_type" ColumnName="login_type" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="app_id" ColumnName="app_id" />
+          <ScalarProperty Name="app_secret" ColumnName="app_secret" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="proxy" ColumnName="proxy" />
+          <ScalarProperty Name="default_proxy" ColumnName="default_proxy" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="access_token" ColumnName="access_token" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pinterest_posts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.pinterest_posts">
+        <MappingFragment StoreEntitySet="pinterest_posts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="board" ColumnName="board" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="time_post" ColumnName="time_post" />
+          <ScalarProperty Name="delay" ColumnName="delay" />
+          <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="twitter_accounts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.twitter_accounts">
+        <MappingFragment StoreEntitySet="twitter_accounts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="access_token" ColumnName="access_token" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="twitter_posts">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.twitter_posts">
+        <MappingFragment StoreEntitySet="twitter_posts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="time_post" ColumnName="time_post" />
+          <ScalarProperty Name="delay" ColumnName="delay" />
+          <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="general_sessions">
+      <EntityTypeMapping TypeName="OrgBubbleDbModel.general_sessions">
+        <MappingFragment StoreEntitySet="general_sessions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="data" ColumnName="data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

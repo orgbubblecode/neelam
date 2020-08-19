@@ -1,0 +1,33 @@
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\bin\Debug\SugarRestSharp.dll
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\bin\Debug\SugarRestSharp.pdb
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\bin\Debug\Newtonsoft.Json.dll
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\bin\Debug\RestSharp.dll
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\bin\Debug\Newtonsoft.Json.xml
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\bin\Debug\RestSharp.xml
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\obj\Debug\SugarRestSharp.csprojAssemblyReference.cache
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\obj\Debug\SugarRestSharp.csproj.CoreCompileInputs.cache
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\obj\Debug\SugarRestSharp.csproj.CopyComplete
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\obj\Debug\SugarRestSharp.dll
+D:\WebProjects\orgbubble.com\CODE\OBSync\SugarRestSharp\obj\Debug\SugarRestSharp.pdb
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\SugarRestSharp.dll
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\SugarRestSharp.pdb
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\RestSharp.dll
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\RestSharp.xml
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.csprojAssemblyReference.cache
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.csproj.CoreCompileInputs.cache
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.csproj.CopyComplete
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.dll
+C:\Users\Neelam Shah\Desktop\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.pdb
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\SugarRestSharp.dll
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\SugarRestSharp.pdb
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\RestSharp.dll
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\bin\Debug\RestSharp.xml
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.csprojAssemblyReference.cache
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.csproj.CoreCompileInputs.cache
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.csproj.CopyComplete
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.dll
+C:\Users\Neelam Shah\source\repos\OBSyncCode-master\OBSyncCode-master\SugarRestSharp\obj\Debug\SugarRestSharp.pdb

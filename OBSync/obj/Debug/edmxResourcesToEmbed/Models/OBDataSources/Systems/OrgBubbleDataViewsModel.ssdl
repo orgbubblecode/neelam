@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="orgbubble_data_viewsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.orgbubble_data_views.orgbubble_socialmedia_accounts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="orgbubble_socialmedia_accounts">
+    <Key>
+      <PropertyRef Name="socialmedia" />
+    </Key>
+    <Property Name="socialmedia" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="uid" Type="mediumtext" />
+    <Property Name="pid" Type="mediumtext" />
+    <Property Name="type" Type="mediumtext" />
+    <Property Name="fullname" Type="mediumtext" />
+    <Property Name="url" Type="mediumtext" />
+    <Property Name="status" Type="int" />
+    <Property Name="changed" Type="datetime" Precision="0" />
+    <Property Name="created" Type="datetime" Precision="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.orgbubble_data_views.orgbubble_socialmedia_posts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="orgbubble_socialmedia_posts">
+    <Key>
+      <PropertyRef Name="socialmedia" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="socialmedia" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ids" Type="mediumtext" />
+    <Property Name="uid" Type="int" />
+    <Property Name="account" Type="int" />
+    <Property Name="category_or_type" Type="mediumtext" />
+    <Property Name="group" Type="mediumtext" />
+    <Property Name="type" Type="mediumtext" />
+    <Property Name="data" Type="longtext" />
+    <Property Name="time_post" Type="datetime" Precision="0" />
+    <Property Name="delay" Type="int" />
+    <Property Name="time_delete" Type="int" />
+    <Property Name="result" Type="mediumtext" />
+    <Property Name="status" Type="int" />
+    <Property Name="changed" Type="datetime" Precision="0" />
+    <Property Name="created" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="orgbubble_data_viewsModelStoreContainer">
+    <EntitySet Name="orgbubble_socialmedia_accounts" EntityType="Self.orgbubble_socialmedia_accounts" store:Type="Views" store:Schema="orgbubble_data_views">
+      <DefiningQuery>SELECT
+`orgbubble_socialmedia_accounts`.`socialmedia`, 
+`orgbubble_socialmedia_accounts`.`uid`, 
+`orgbubble_socialmedia_accounts`.`pid`, 
+`orgbubble_socialmedia_accounts`.`type`, 
+`orgbubble_socialmedia_accounts`.`fullname`, 
+`orgbubble_socialmedia_accounts`.`url`, 
+`orgbubble_socialmedia_accounts`.`status`, 
+`orgbubble_socialmedia_accounts`.`changed`, 
+`orgbubble_socialmedia_accounts`.`created`
+FROM `orgbubble_socialmedia_accounts` AS `orgbubble_socialmedia_accounts`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="orgbubble_socialmedia_posts" EntityType="Self.orgbubble_socialmedia_posts" store:Type="Views" store:Schema="orgbubble_data_views">
+      <DefiningQuery>SELECT
+`orgbubble_socialmedia_posts`.`socialmedia`, 
+`orgbubble_socialmedia_posts`.`id`, 
+`orgbubble_socialmedia_posts`.`ids`, 
+`orgbubble_socialmedia_posts`.`uid`, 
+`orgbubble_socialmedia_posts`.`account`, 
+`orgbubble_socialmedia_posts`.`category_or_type`, 
+`orgbubble_socialmedia_posts`.`group`, 
+`orgbubble_socialmedia_posts`.`type`, 
+`orgbubble_socialmedia_posts`.`data`, 
+`orgbubble_socialmedia_posts`.`time_post`, 
+`orgbubble_socialmedia_posts`.`delay`, 
+`orgbubble_socialmedia_posts`.`time_delete`, 
+`orgbubble_socialmedia_posts`.`result`, 
+`orgbubble_socialmedia_posts`.`status`, 
+`orgbubble_socialmedia_posts`.`changed`, 
+`orgbubble_socialmedia_posts`.`created`
+FROM `orgbubble_socialmedia_posts` AS `orgbubble_socialmedia_posts`</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="orgbubble_dbv7Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sp_account_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="social_network" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="login_type" Type="Int32" />
+    <Property Name="can_post" Type="Int32" />
+    <Property Name="pid" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="token" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="avatar" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="proxy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sp_caption">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="content" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sp_coupon_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Single" />
+    <Property Name="expiration_date" Type="DateTime" />
+    <Property Name="packages" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sp_file_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="file" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="extension" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="size" Type="Single" />
+    <Property Name="is_image" Type="Int32" />
+    <Property Name="width" Type="Int32" />
+    <Property Name="height" Type="Int32" />
+    <Property Name="note" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sp_group_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sp_instagram_activities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="action" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="time" Type="Int32" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="settings" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="Int32" />
+    <Property Name="created" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sp_instagram_activities_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="action" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="media_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="created" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sp_instagram_analytics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="next_action" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sp_instagram_analytics_stats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sp_instagram_sessions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="settings" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="cookies" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="last_modified" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sp_language">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="slug" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="text" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sp_language_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="icon" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="is_default" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sp_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sp_package_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="price_monthly" Type="Single" />
+    <Property Name="price_annually" Type="Single" />
+    <Property Name="number_accounts" Type="Int32" />
+    <Property Name="trial_day" Type="Int32" />
+    <Property Name="popular" Type="Int32" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="permissions" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sp_payment_history">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="package" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="transaction_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="plan" Type="Int32" />
+    <Property Name="amount" Type="Single" />
+    <Property Name="created" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sp_payment_subscriptions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="package" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="subscription_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="customer_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="plan" Type="Int32" />
+    <Property Name="created" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sp_posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="account_id" Type="Int32" />
+    <Property Name="social_network" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="time_post" Type="Int32" />
+    <Property Name="time_delete" Type="Int32" />
+    <Property Name="delay" Type="Int32" />
+    <Property Name="repost_frequency" Type="Int32" />
+    <Property Name="repost_until" Type="Int32" />
+    <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sp_proxy_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="limit" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="packages" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sp_purchase_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="item_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="purchase_code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="version" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sp_team">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="owner" Type="Int32" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="permissions" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sp_team_member">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="permissions" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sp_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="Int32" />
+    <Property Name="fullname" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="package" Type="Int32" />
+    <Property Name="expiration_date" Type="DateTime" />
+    <Property Name="timezone" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="login_type" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="changed" Type="DateTime" />
+    <Property Name="created" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sp_sessions">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="ip_address" />
+      <PropertyRef Name="timestamp" />
+      <PropertyRef Name="data" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="timestamp" Type="Int64" Nullable="false" />
+    <Property Name="data" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="OBV7Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sp_account_manager" EntityType="Self.sp_account_manager" />
+    <EntitySet Name="sp_caption" EntityType="Self.sp_caption" />
+    <EntitySet Name="sp_coupon_manager" EntityType="Self.sp_coupon_manager" />
+    <EntitySet Name="sp_file_manager" EntityType="Self.sp_file_manager" />
+    <EntitySet Name="sp_group_manager" EntityType="Self.sp_group_manager" />
+    <EntitySet Name="sp_instagram_activities" EntityType="Self.sp_instagram_activities" />
+    <EntitySet Name="sp_instagram_activities_log" EntityType="Self.sp_instagram_activities_log" />
+    <EntitySet Name="sp_instagram_analytics" EntityType="Self.sp_instagram_analytics" />
+    <EntitySet Name="sp_instagram_analytics_stats" EntityType="Self.sp_instagram_analytics_stats" />
+    <EntitySet Name="sp_instagram_sessions" EntityType="Self.sp_instagram_sessions" />
+    <EntitySet Name="sp_language" EntityType="Self.sp_language" />
+    <EntitySet Name="sp_language_category" EntityType="Self.sp_language_category" />
+    <EntitySet Name="sp_options" EntityType="Self.sp_options" />
+    <EntitySet Name="sp_package_manager" EntityType="Self.sp_package_manager" />
+    <EntitySet Name="sp_payment_history" EntityType="Self.sp_payment_history" />
+    <EntitySet Name="sp_payment_subscriptions" EntityType="Self.sp_payment_subscriptions" />
+    <EntitySet Name="sp_posts" EntityType="Self.sp_posts" />
+    <EntitySet Name="sp_proxy_manager" EntityType="Self.sp_proxy_manager" />
+    <EntitySet Name="sp_purchase_manager" EntityType="Self.sp_purchase_manager" />
+    <EntitySet Name="sp_team" EntityType="Self.sp_team" />
+    <EntitySet Name="sp_team_member" EntityType="Self.sp_team_member" />
+    <EntitySet Name="sp_users" EntityType="Self.sp_users" />
+    <EntitySet Name="sp_sessions" EntityType="Self.sp_sessions" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,1665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\build\Microsoft.CodeAnalysis.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.EntityFrameworkCore.Design.3.1.0\build\net461\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.0\build\net461\Microsoft.EntityFrameworkCore.Design.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AAD2C605-9FB9-4B00-9198-CDFE5541F772}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OBSync</RootNamespace>
+    <AssemblyName>OBSync</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Description, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Description.1.0.0\lib\Description.dll</HintPath>
+    </Reference>
+    <Reference Include="dotnet-aspnet-codegenerator-design, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Web.CodeGeneration.Design.3.1.0\lib\net461\dotnet-aspnet-codegenerator-design.exe</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.13605.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.1.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MailChimp, Version=1.1.92.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailChimp.NET.1.1.92\lib\net40\MailChimp.dll</HintPath>
+    </Reference>
+    <Reference Include="MailChimp.Net, Version=4.2.1.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailChimp.Net.V3.4.2.1\lib\net45\MailChimp.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Html.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Html.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Html.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Razor.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Language, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Razor.Language.3.1.0\lib\netstandard2.0\Microsoft.AspNetCore.Razor.Language.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Runtime, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Razor.Runtime.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Razor.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Razor, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Razor.3.1.0\lib\netstandard2.0\Microsoft.CodeAnalysis.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.3.3.1\lib\netstandard2.0\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.SqlClient, Version=1.0.19269.1, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.SqlClient.1.0.19269.1\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Design.3.1.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.3.1.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.SqlServer.3.1.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=3.0.8.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.3.0.8\lib\net45\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.4.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Web.CodeGeneration.3.1.0\lib\netstandard2.0\Microsoft.VisualStudio.Web.CodeGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.3.1.0\lib\netstandard2.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Web.CodeGeneration.Core.3.1.0\lib\netstandard2.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.3.1.0\lib\netstandard2.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Web.CodeGeneration.Templating.3.1.0\lib\netstandard2.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Web.CodeGeneration.Utils.3.1.0\lib\netstandard2.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.3.1.0\lib\netstandard2.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.18\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.18\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Web.6.8.8\lib\net45\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=0.61.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.0.61.0\lib\net461\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="NameParser, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NameParserSharp.1.4.0\lib\net45\NameParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.2.0.3.0\lib\net40\NReco.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.VideoInfo, Version=1.1.1.0, Culture=neutral, PublicKeyToken=8f59ee36d2987295, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.VideoInfo.1.1.1\lib\net35\NReco.VideoInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Frameworks, Version=4.7.0.5, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Frameworks.4.7.0\lib\net46\NuGet.Frameworks.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.AttributedModel.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.Convention.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.Hosting.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.Runtime.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.TypedParts.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Interactive.Async, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.1.1\lib\net46\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.6.0\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.5.1\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.6\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.6\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CRMOpsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MailChimpController.cs" />
+    <Compile Include="Controllers\TestdomainsController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912180348013_newfields.cs" />
+    <Compile Include="Migrations\201912180348013_newfields.designer.cs">
+      <DependentUpon>201912180348013_newfields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912180355353_newfields2.cs" />
+    <Compile Include="Migrations\201912180355353_newfields2.designer.cs">
+      <DependentUpon>201912180355353_newfields2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912180358541_newfields3.cs" />
+    <Compile Include="Migrations\201912180358541_newfields3.designer.cs">
+      <DependentUpon>201912180358541_newfields3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApplicationAuthProvider.cs" />
+    <Compile Include="Models\AuthRepository.cs" />
+    <Compile Include="Models\Helpers\CommunicationSubscriptions.cs" />
+    <Compile Include="Models\Helpers\Extensions.cs" />
+    <Compile Include="Models\Helpers\Network.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Helpers\OrgBubbleViewsHelper.cs" />
+    <Compile Include="Models\Helpers\SuiteCRM.cs" />
+    <Compile Include="Models\Helpers\SuiteCRMFactory.cs" />
+    <Compile Include="Models\Helpers\Utilities.cs" />
+    <Compile Include="Models\MailChimp\AllMyBioUserRetrieval.cs" />
+    <Compile Include="Models\MailChimp\UsersRetrieval.cs" />
+    <Compile Include="Models\OBAPIEnumEntityType.cs" />
+    <Compile Include="Models\OBDataSourcesMetadata\OrgBubbleMetadata.cs" />
+    <Compile Include="Models\OBDataSources\Products\OrgBubbleV7EntityDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrgBubbleV7EntityDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\OrgBubbleV7EntityDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\OrgBubbleV7EntityDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrgBubbleV7EntityDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_account_manager.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_caption.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_coupon_manager.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_file_manager.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_group_manager.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_instagram_activities.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_instagram_activities_log.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_instagram_analytics.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_instagram_analytics_stats.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_instagram_sessions.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_language.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_language_category.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_options.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_package_manager.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_payment_history.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_payment_subscriptions.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_posts.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_proxy_manager.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_purchase_manager.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_sessions.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_team.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_team_member.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\sp_users.cs">
+      <DependentUpon>OrgBubbleV7EntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\account.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\accounts_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\accounts_bugs.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\accounts_cases.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\accounts_contacts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\accounts_cstm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\accounts_opportunities.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\acl_actions.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\acl_roles.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\acl_roles_actions.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\acl_roles_users.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\address_book.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\alert.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\AllMyBioEntityDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllMyBioEntityDataModel.Context.tt</DependentUpon>
+      <CustomToolNamespace>AllMyBio</CustomToolNamespace>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\AllMyBioEntityDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\AllMyBioEntityDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllMyBioEntityDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\am_projecttemplates.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\am_projecttemplates_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\am_projecttemplates_contacts_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\am_projecttemplates_project_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\am_projecttemplates_users_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\am_tasktemplates.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\am_tasktemplates_am_projecttemplates_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\am_tasktemplates_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aobh_businesshours.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aod_index.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aod_indexevent.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aod_indexevent_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aod_index_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aok_knowledgebase.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aok_knowledgebase_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aok_knowledgebase_categories.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aok_knowledge_base_categories.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aok_knowledge_base_categories_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aop_case_events.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aop_case_events_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aop_case_updates.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aop_case_updates_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aor_charts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aor_conditions.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aor_fields.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aor_reports.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aor_reports_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aor_scheduled_reports.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_contracts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_contracts_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_contracts_documents.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_invoices.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_invoices_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_line_item_groups.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_line_item_groups_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_pdf_templates.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_pdf_templates_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_products.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_products_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_products_quotes.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_products_quotes_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_product_categories.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_product_categories_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_quotes.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_quotes_aos_invoices_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_quotes_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_quotes_os_contracts_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aos_quotes_project_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aow_actions.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aow_conditions.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aow_processed.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aow_processed_aow_actions.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aow_workflow.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\aow_workflow_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\bug.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\bugs_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\call.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\calls_contacts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\calls_leads.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\calls_reschedule.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\calls_reschedule_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\calls_users.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\campaign.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\campaigns_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\campaign_log.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\campaign_trkrs.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\case.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\cases_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\cases_bugs.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\cases_cstm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\contact.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\contacts_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\contacts_bugs.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\contacts_cases.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\contacts_cstm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\contacts_users.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\cron_remove_documents.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\currency.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\document.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\documents_accounts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\documents_bugs.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\documents_cases.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\documents_contacts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\documents_opportunities.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\document_revisions.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\domain.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\eapm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\email.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\emailman.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\emails_beans.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\emails_email_addr_rel.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\emails_text.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\email_addresses.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\email_addresses_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\email_addr_bean_rel.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\email_marketing.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\email_marketing_prospect_lists.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\email_templates.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\facebook_accounts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\facebook_posts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\favorite.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fields_meta_data.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\folder.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\folders_rel.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\folders_subscriptions.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_events.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_events_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_events_contacts_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_events_fp_event_delegates_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_events_fp_event_locations_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_events_leads_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_events_prospects_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_event_locations.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_event_locations_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\fp_event_locations_fp_events_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_caption.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_coupons.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_custom_page.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_file_manager.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_groups.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_lang.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_lang_list.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_options.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_packages.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_payment_history.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_payment_subscriptions.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_proxies.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_purchase.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_sessions.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\general_users.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\import_maps.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\inbound_email.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\inbound_email_autoreply.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\inbound_email_cache_ts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\instagram_accounts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\instagram_activities.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\instagram_activities_log.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\instagram_analytics.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\instagram_analytics_stats.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\instagram_posts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\instagram_sessions.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_address_cache.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_address_cache_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_areas.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_areas_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_maps.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_maps_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_maps_jjwg_areas_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_maps_jjwg_markers_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_markers.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\jjwg_markers_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\job_queue.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\lead.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\leads_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\leads_cstm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\link.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\linkedin_accounts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\linkedin_posts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBAPIEntitiesTracker.cs" />
+    <Compile Include="Models\OBDataSources\Systems\linked_documents.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\meeting.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\meetings_contacts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\meetings_cstm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\meetings_leads.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\meetings_users.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\note.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\notes_cstm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\oauth2clients.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\oauth2tokens.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\oauth_consumer.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\oauth_nonce.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\oauth_tokens.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\OBCRM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OBCRM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\OBCRM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\OBCRM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OBCRM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\OBSyncOLTP.cs" />
+    <Compile Include="Models\OBDataSources\Systems\opportunities_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\opportunities_contacts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\opportunities_cstm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\opportunity.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\OrgBubbleDataViewsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrgBubbleDataViewsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\OrgBubbleDataViewsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrgBubbleDataViewsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\OrgBubbleDataViewsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrgBubbleDataViewsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\OrgBubbleEntityDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrgBubbleEntityDataModel.Context.tt</DependentUpon>
+      <CustomToolNamespace>OrgBubble</CustomToolNamespace>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\OrgBubbleEntityDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\OrgBubbleEntityDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrgBubbleEntityDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\orgbubble_socialmedia_accounts.cs">
+      <DependentUpon>OrgBubbleDataViewsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\orgbubble_socialmedia_posts.cs">
+      <DependentUpon>OrgBubbleDataViewsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\outbound_email.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\outbound_email_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\package.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\page.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\payment.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\pinterest_accounts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\pinterest_posts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\project.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\project.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\projects_accounts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\projects_bugs.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\projects_cases.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\projects_contacts.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\projects_opportunities.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\projects_products.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\project_contacts_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\project_cstm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\project_task.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\project_task_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\project_users_1_c.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\prospect.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\prospects_cstm.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\prospect_lists.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\prospect_lists_prospects.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\prospect_list_campaigns.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\relationship.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\release.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\reminder.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\reminders_invitees.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\role.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\roles_modules.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\roles_users.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\saved_search.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\scheduler.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\securitygroup.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\securitygroups_acl_roles.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\securitygroups_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\securitygroups_default.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\securitygroups_records.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\securitygroups_users.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\setting.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\spot.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\sugarfeed.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\survey.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveyquestion.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveyquestionoption.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveyquestionoptions_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveyquestionoptions_surveyquestionresponses.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveyquestionrespons.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveyquestionresponses_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveyquestions_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveyrespons.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveyresponses_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\surveys_audit.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\task.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\templatesectionline.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\tracker.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\track_links.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\twitter_accounts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\twitter_posts.cs">
+      <DependentUpon>OrgBubbleEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\upgrade_history.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\user.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\user.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\users_last_import.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Products\users_logs.cs">
+      <DependentUpon>AllMyBioEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBAPIResponse.cs" />
+    <Compile Include="Models\OBDataSources\Systems\users_password_link.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\users_signatures.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\user_preferences.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OBDataSources\Systems\vcal.cs">
+      <DependentUpon>OBCRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.SqlServer.sql" />
+    <Content Include="App_Readme\Elmah.SqlServer.txt" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="LICENSE.txt" />
+    <Content Include="Models\OBDataSources\Products\AllMyBioEntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AllMyBioEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>AllMyBioEntityDataModel.Context.cs</LastGenOutput>
+      <CustomToolNamespace>AllMyBio</CustomToolNamespace>
+    </Content>
+    <Content Include="Models\OBDataSources\Products\AllMyBioEntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AllMyBioEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>AllMyBioEntityDataModel.cs</LastGenOutput>
+      <CustomToolNamespace>AllMyBio</CustomToolNamespace>
+    </Content>
+    <Content Include="Models\OBDataSources\Products\OrgBubbleV7EntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrgBubbleV7EntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>OrgBubbleV7EntityDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\OBDataSources\Products\OrgBubbleV7EntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrgBubbleV7EntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>OrgBubbleV7EntityDataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\OBDataSources\Systems\OBCRM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OBCRM.Context.cs</LastGenOutput>
+      <DependentUpon>OBCRM.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\OBDataSources\Systems\OBCRM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OBCRM.cs</LastGenOutput>
+      <DependentUpon>OBCRM.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\OBDataSources\Systems\OrgBubbleDataViewsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrgBubbleDataViewsModel.edmx</DependentUpon>
+      <LastGenOutput>OrgBubbleDataViewsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\OBDataSources\Systems\OrgBubbleDataViewsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrgBubbleDataViewsModel.edmx</DependentUpon>
+      <LastGenOutput>OrgBubbleDataViewsModel.cs</LastGenOutput>
+      <CustomToolNamespace>OrgBubbleDataViews</CustomToolNamespace>
+    </Content>
+    <Content Include="Models\OBDataSources\Products\OrgBubbleEntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrgBubbleEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>OrgBubbleEntityDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\OBDataSources\Products\OrgBubbleEntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrgBubbleEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>OrgBubbleEntityDataModel.cs</LastGenOutput>
+      <CustomToolNamespace>OrgBubble</CustomToolNamespace>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Models\OBDataSources\Products\AllMyBioEntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AllMyBioEntityDataModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>AllMyBio</CustomToolNamespace>
+    </EntityDeploy>
+    <Content Include="Models\OBDataSources\Products\AllMyBioEntityDataModel.edmx.diagram">
+      <DependentUpon>AllMyBioEntityDataModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\OBDataSources\Products\OrgBubbleEntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrgBubbleEntityDataModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>OrgBubble</CustomToolNamespace>
+    </EntityDeploy>
+    <Content Include="Models\OBDataSources\Products\OrgBubbleEntityDataModel.edmx.diagram">
+      <DependentUpon>OrgBubbleEntityDataModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\OBDataSources\Systems\OBCRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OBCRM.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>SuiteCRM</CustomToolNamespace>
+    </EntityDeploy>
+    <Content Include="Models\OBDataSources\Systems\OBCRM.edmx.diagram">
+      <DependentUpon>OBCRM.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\OBDataSources\Systems\OrgBubbleDataViewsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrgBubbleDataViewsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\OBDataSources\Systems\OrgBubbleDataViewsModel.edmx.diagram">
+      <DependentUpon>OrgBubbleDataViewsModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\OBDataSources\Products\OrgBubbleV7EntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrgBubbleV7EntityDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\OBDataSources\Products\OrgBubbleV7EntityDataModel.edmx.diagram">
+      <DependentUpon>OrgBubbleV7EntityDataModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\MailChimp\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912180348013_newfields.resx">
+      <DependentUpon>201912180348013_newfields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912180355353_newfields2.resx">
+      <DependentUpon>201912180355353_newfields2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912180358541_newfields3.resx">
+      <DependentUpon>201912180358541_newfields3.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SugarRestSharp\SugarRestSharp.csproj">
+      <Project>{f0f513b8-998d-435e-92f0-42ca484d98ad}</Project>
+      <Name>SugarRestSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52464</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52464/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.0\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.0\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\build\Microsoft.CodeAnalysis.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.Analyzers.2.9.4\build\Microsoft.CodeAnalysis.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

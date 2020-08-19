@@ -1,0 +1,1525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OrgBubbleDbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="facebook_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="pid" Type="text" />
+          <Property Name="type" Type="text" />
+          <Property Name="fullname" Type="text" />
+          <Property Name="url" Type="text" />
+          <Property Name="official" Type="int" />
+          <Property Name="login_type" Type="text" />
+          <Property Name="avatar" Type="text" />
+          <Property Name="access_token" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="facebook_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="account" Type="int" />
+          <Property Name="category" Type="text" />
+          <Property Name="group" Type="text" />
+          <Property Name="type" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="time_post" Type="datetime" Precision="0" />
+          <Property Name="delay" Type="int" />
+          <Property Name="time_delete" Type="int" />
+          <Property Name="result" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_caption">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="content" Type="longtext" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_coupons">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="name" Type="text" />
+          <Property Name="code" Type="text" />
+          <Property Name="type" Type="int" />
+          <Property Name="price" Type="float" />
+          <Property Name="expiration_date" Type="date" />
+          <Property Name="packages" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_custom_page">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="pid" Type="int" />
+          <Property Name="position" Type="int" />
+          <Property Name="name" Type="text" />
+          <Property Name="slug" Type="text" />
+          <Property Name="image" Type="text" />
+          <Property Name="description" Type="longtext" />
+          <Property Name="content" Type="longtext" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_file_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="file_name" Type="text" />
+          <Property Name="image_type" Type="text" />
+          <Property Name="file_ext" Type="text" />
+          <Property Name="file_size" Type="text" />
+          <Property Name="is_image" Type="text" />
+          <Property Name="image_width" Type="int" />
+          <Property Name="image_height" Type="int" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_groups">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="name" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="created" Type="datetime" Precision="0" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_lang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" Nullable="false" />
+          <Property Name="code" Type="text" Nullable="false" />
+          <Property Name="slug" Type="text" Nullable="false" />
+          <Property Name="text" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="general_lang_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="name" Type="text" />
+          <Property Name="code" Type="text" />
+          <Property Name="icon" Type="text" />
+          <Property Name="is_default" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_options">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" />
+          <Property Name="value" Type="longtext" />
+        </EntityType>
+        <EntityType Name="general_packages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="type" Type="int" />
+          <Property Name="name" Type="text" />
+          <Property Name="description" Type="text" />
+          <Property Name="price_monthly" Type="float" />
+          <Property Name="price_annually" Type="float" />
+          <Property Name="number_accounts" Type="int" />
+          <Property Name="is_default" Type="int" />
+          <Property Name="trial_day" Type="int" />
+          <Property Name="permission" Type="longtext" />
+          <Property Name="sort" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_payment_history">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="package" Type="int" />
+          <Property Name="type" Type="text" />
+          <Property Name="transaction_id" Type="text" />
+          <Property Name="plan" Type="int" />
+          <Property Name="amount" Type="float" />
+          <Property Name="status" Type="int" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_payment_subscriptions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="package" Type="int" />
+          <Property Name="type" Type="text" />
+          <Property Name="billing_agreement_id" Type="text" />
+          <Property Name="plan" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_proxies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="address" Type="text" />
+          <Property Name="location" Type="text" />
+          <Property Name="limit" Type="int" />
+          <Property Name="package" Type="int" />
+          <Property Name="active" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="general_purchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="pid" Type="text" />
+          <Property Name="purchase_code" Type="text" />
+          <Property Name="version" Type="text" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.orgbubble_OBPROD.general_sessions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="general_sessions">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="ip_address" />
+            <PropertyRef Name="timestamp" />
+            <PropertyRef Name="data" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="timestamp" Type="uint" Nullable="false" />
+          <Property Name="data" Type="blob" Nullable="false" />
+        </EntityType>
+        <EntityType Name="general_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="admin" Type="int" />
+          <Property Name="login_type" Type="text" />
+          <Property Name="fullname" Type="text" />
+          <Property Name="email" Type="text" />
+          <Property Name="password" Type="text" />
+          <Property Name="package" Type="int" />
+          <Property Name="expiration_date" Type="date" />
+          <Property Name="timezone" Type="text" />
+          <Property Name="permission" Type="text" />
+          <Property Name="settings" Type="longtext" />
+          <Property Name="activation_key" Type="text" />
+          <Property Name="reset_key" Type="text" />
+          <Property Name="history_ip" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="instagram_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="text" />
+          <Property Name="pid" Type="text" />
+          <Property Name="avatar" Type="text" />
+          <Property Name="username" Type="text" />
+          <Property Name="password" Type="text" />
+          <Property Name="proxy" Type="text" />
+          <Property Name="default_proxy" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="instagram_activities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="pid" Type="int" />
+          <Property Name="account" Type="int" />
+          <Property Name="action" Type="longtext" />
+          <Property Name="time" Type="datetime" Precision="0" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="settings" Type="longtext" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="instagram_activities_log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="pid" Type="int" />
+          <Property Name="action" Type="text" />
+          <Property Name="user_id" Type="text" />
+          <Property Name="media_id" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="instagram_analytics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="account" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="next_action" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="instagram_analytics_stats">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="account" Type="int" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="date" Type="date" />
+        </EntityType>
+        <EntityType Name="instagram_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="account" Type="int" />
+          <Property Name="type" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="time_post" Type="datetime" Precision="0" />
+          <Property Name="delay" Type="int" />
+          <Property Name="time_delete" Type="int" />
+          <Property Name="result" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="instagram_sessions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="settings" Type="mediumblob" />
+          <Property Name="cookies" Type="mediumblob" />
+          <Property Name="last_modified" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="linkedin_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="pid" Type="text" />
+          <Property Name="type" Type="text" />
+          <Property Name="username" Type="text" />
+          <Property Name="url" Type="text" />
+          <Property Name="avatar" Type="text" />
+          <Property Name="access_token" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="linkedin_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="account" Type="int" />
+          <Property Name="type" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="time_post" Type="datetime" Precision="0" />
+          <Property Name="delay" Type="int" />
+          <Property Name="time_delete" Type="int" />
+          <Property Name="result" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="pinterest_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="type" Type="varchar" MaxLength="255" />
+          <Property Name="login_type" Type="int" />
+          <Property Name="pid" Type="text" />
+          <Property Name="username" Type="text" />
+          <Property Name="account" Type="text" />
+          <Property Name="password" Type="text" />
+          <Property Name="app_id" Type="text" />
+          <Property Name="app_secret" Type="text" />
+          <Property Name="url" Type="text" />
+          <Property Name="proxy" Type="text" />
+          <Property Name="default_proxy" Type="text" />
+          <Property Name="avatar" Type="text" />
+          <Property Name="access_token" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="pinterest_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="account" Type="int" />
+          <Property Name="board" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="time_post" Type="datetime" Precision="0" />
+          <Property Name="delay" Type="int" />
+          <Property Name="time_delete" Type="int" />
+          <Property Name="result" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="twitter_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="pid" Type="text" />
+          <Property Name="username" Type="text" />
+          <Property Name="avatar" Type="text" />
+          <Property Name="access_token" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="twitter_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="account" Type="int" />
+          <Property Name="type" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="time_post" Type="datetime" Precision="0" />
+          <Property Name="delay" Type="int" />
+          <Property Name="time_delete" Type="int" />
+          <Property Name="result" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="OrgBubbleDbModelStoreContainer">
+          <EntitySet Name="facebook_accounts" EntityType="Self.facebook_accounts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="facebook_posts" EntityType="Self.facebook_posts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_caption" EntityType="Self.general_caption" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_coupons" EntityType="Self.general_coupons" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_custom_page" EntityType="Self.general_custom_page" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_file_manager" EntityType="Self.general_file_manager" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_groups" EntityType="Self.general_groups" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_lang" EntityType="Self.general_lang" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_lang_list" EntityType="Self.general_lang_list" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_options" EntityType="Self.general_options" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_packages" EntityType="Self.general_packages" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_payment_history" EntityType="Self.general_payment_history" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_payment_subscriptions" EntityType="Self.general_payment_subscriptions" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_proxies" EntityType="Self.general_proxies" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_purchase" EntityType="Self.general_purchase" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_users" EntityType="Self.general_users" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="instagram_accounts" EntityType="Self.instagram_accounts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="instagram_activities" EntityType="Self.instagram_activities" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="instagram_activities_log" EntityType="Self.instagram_activities_log" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="instagram_analytics" EntityType="Self.instagram_analytics" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="instagram_analytics_stats" EntityType="Self.instagram_analytics_stats" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="instagram_posts" EntityType="Self.instagram_posts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="instagram_sessions" EntityType="Self.instagram_sessions" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="linkedin_accounts" EntityType="Self.linkedin_accounts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="linkedin_posts" EntityType="Self.linkedin_posts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="pinterest_accounts" EntityType="Self.pinterest_accounts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="pinterest_posts" EntityType="Self.pinterest_posts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="twitter_accounts" EntityType="Self.twitter_accounts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="twitter_posts" EntityType="Self.twitter_posts" Schema="orgbubble_OBPROD" store:Type="Tables" />
+          <EntitySet Name="general_sessions" EntityType="Self.general_sessions" store:Type="Tables" store:Schema="orgbubble_OBPROD">
+            <DefiningQuery>SELECT
+`general_sessions`.`id`, 
+`general_sessions`.`ip_address`, 
+`general_sessions`.`timestamp`, 
+`general_sessions`.`data`
+FROM `general_sessions` AS `general_sessions`</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OrgBubbleDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="facebook_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="fullname" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="official" Type="Int32" />
+          <Property Name="login_type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="access_token" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="facebook_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="account" Type="Int32" />
+          <Property Name="category" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="group" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="time_post" Type="DateTime" />
+          <Property Name="delay" Type="Int32" />
+          <Property Name="time_delete" Type="Int32" />
+          <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_caption">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="content" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_coupons">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="Int32" />
+          <Property Name="price" Type="Single" />
+          <Property Name="expiration_date" Type="DateTime" />
+          <Property Name="packages" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_custom_page">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="position" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="slug" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="content" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_file_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="file_name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="image_type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="file_ext" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="file_size" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="is_image" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="image_width" Type="Int32" />
+          <Property Name="image_height" Type="Int32" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_groups">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="created" Type="DateTime" />
+          <Property Name="changed" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_lang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="slug" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="text" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="general_lang_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="icon" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="is_default" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_options">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="value" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="general_packages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="price_monthly" Type="Single" />
+          <Property Name="price_annually" Type="Single" />
+          <Property Name="number_accounts" Type="Int32" />
+          <Property Name="is_default" Type="Int32" />
+          <Property Name="trial_day" Type="Int32" />
+          <Property Name="permission" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_payment_history">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="package" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="transaction_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="plan" Type="Int32" />
+          <Property Name="amount" Type="Single" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_payment_subscriptions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="package" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="billing_agreement_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="plan" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_proxies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="location" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="limit" Type="Int32" />
+          <Property Name="package" Type="Int32" />
+          <Property Name="active" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_purchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="purchase_code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="version" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="general_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="admin" Type="Int32" />
+          <Property Name="login_type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="fullname" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="package" Type="Int32" />
+          <Property Name="expiration_date" Type="DateTime" />
+          <Property Name="timezone" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="permission" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="settings" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="activation_key" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="reset_key" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="history_ip" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="instagram_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="proxy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="default_proxy" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="instagram_activities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="account" Type="Int32" />
+          <Property Name="action" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="time" Type="DateTime" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="settings" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="instagram_activities_log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="action" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="user_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="media_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="instagram_analytics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="next_action" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="instagram_analytics_stats">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="account" Type="Int32" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="instagram_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="account" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="time_post" Type="DateTime" />
+          <Property Name="delay" Type="Int32" />
+          <Property Name="time_delete" Type="Int32" />
+          <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="instagram_sessions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="settings" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="cookies" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="last_modified" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="linkedin_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="access_token" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="linkedin_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="account" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="time_post" Type="DateTime" />
+          <Property Name="delay" Type="Int32" />
+          <Property Name="time_delete" Type="Int32" />
+          <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="pinterest_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="login_type" Type="Int32" />
+          <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="app_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="app_secret" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="proxy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="default_proxy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="access_token" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="pinterest_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="account" Type="Int32" />
+          <Property Name="board" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="time_post" Type="DateTime" />
+          <Property Name="delay" Type="Int32" />
+          <Property Name="time_delete" Type="Int32" />
+          <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="twitter_accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="avatar" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="access_token" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="twitter_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="account" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="time_post" Type="DateTime" />
+          <Property Name="delay" Type="Int32" />
+          <Property Name="time_delete" Type="Int32" />
+          <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="general_sessions">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="ip_address" />
+            <PropertyRef Name="timestamp" />
+            <PropertyRef Name="data" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="timestamp" Type="Int64" Nullable="false" />
+          <Property Name="data" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="OrgBubbleDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="facebook_accounts" EntityType="Self.facebook_accounts" />
+          <EntitySet Name="facebook_posts" EntityType="Self.facebook_posts" />
+          <EntitySet Name="general_caption" EntityType="Self.general_caption" />
+          <EntitySet Name="general_coupons" EntityType="Self.general_coupons" />
+          <EntitySet Name="general_custom_page" EntityType="Self.general_custom_page" />
+          <EntitySet Name="general_file_manager" EntityType="Self.general_file_manager" />
+          <EntitySet Name="general_groups" EntityType="Self.general_groups" />
+          <EntitySet Name="general_lang" EntityType="Self.general_lang" />
+          <EntitySet Name="general_lang_list" EntityType="Self.general_lang_list" />
+          <EntitySet Name="general_options" EntityType="Self.general_options" />
+          <EntitySet Name="general_packages" EntityType="Self.general_packages" />
+          <EntitySet Name="general_payment_history" EntityType="Self.general_payment_history" />
+          <EntitySet Name="general_payment_subscriptions" EntityType="Self.general_payment_subscriptions" />
+          <EntitySet Name="general_proxies" EntityType="Self.general_proxies" />
+          <EntitySet Name="general_purchase" EntityType="Self.general_purchase" />
+          <EntitySet Name="general_users" EntityType="Self.general_users" />
+          <EntitySet Name="instagram_accounts" EntityType="Self.instagram_accounts" />
+          <EntitySet Name="instagram_activities" EntityType="Self.instagram_activities" />
+          <EntitySet Name="instagram_activities_log" EntityType="Self.instagram_activities_log" />
+          <EntitySet Name="instagram_analytics" EntityType="Self.instagram_analytics" />
+          <EntitySet Name="instagram_analytics_stats" EntityType="Self.instagram_analytics_stats" />
+          <EntitySet Name="instagram_posts" EntityType="Self.instagram_posts" />
+          <EntitySet Name="instagram_sessions" EntityType="Self.instagram_sessions" />
+          <EntitySet Name="linkedin_accounts" EntityType="Self.linkedin_accounts" />
+          <EntitySet Name="linkedin_posts" EntityType="Self.linkedin_posts" />
+          <EntitySet Name="pinterest_accounts" EntityType="Self.pinterest_accounts" />
+          <EntitySet Name="pinterest_posts" EntityType="Self.pinterest_posts" />
+          <EntitySet Name="twitter_accounts" EntityType="Self.twitter_accounts" />
+          <EntitySet Name="twitter_posts" EntityType="Self.twitter_posts" />
+          <EntitySet Name="general_sessions" EntityType="Self.general_sessions" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OrgBubbleDbModelStoreContainer" CdmEntityContainer="OrgBubbleDbEntities">
+          <EntitySetMapping Name="facebook_accounts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.facebook_accounts">
+              <MappingFragment StoreEntitySet="facebook_accounts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="official" ColumnName="official" />
+                <ScalarProperty Name="login_type" ColumnName="login_type" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="access_token" ColumnName="access_token" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="facebook_posts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.facebook_posts">
+              <MappingFragment StoreEntitySet="facebook_posts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="group" ColumnName="group" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="time_post" ColumnName="time_post" />
+                <ScalarProperty Name="delay" ColumnName="delay" />
+                <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_caption">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_caption">
+              <MappingFragment StoreEntitySet="general_caption">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_coupons">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_coupons">
+              <MappingFragment StoreEntitySet="general_coupons">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+                <ScalarProperty Name="packages" ColumnName="packages" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_custom_page">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_custom_page">
+              <MappingFragment StoreEntitySet="general_custom_page">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_file_manager">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_file_manager">
+              <MappingFragment StoreEntitySet="general_file_manager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="file_name" ColumnName="file_name" />
+                <ScalarProperty Name="image_type" ColumnName="image_type" />
+                <ScalarProperty Name="file_ext" ColumnName="file_ext" />
+                <ScalarProperty Name="file_size" ColumnName="file_size" />
+                <ScalarProperty Name="is_image" ColumnName="is_image" />
+                <ScalarProperty Name="image_width" ColumnName="image_width" />
+                <ScalarProperty Name="image_height" ColumnName="image_height" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_groups">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_groups">
+              <MappingFragment StoreEntitySet="general_groups">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_lang">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_lang">
+              <MappingFragment StoreEntitySet="general_lang">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="text" ColumnName="text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_lang_list">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_lang_list">
+              <MappingFragment StoreEntitySet="general_lang_list">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="is_default" ColumnName="is_default" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_options">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_options">
+              <MappingFragment StoreEntitySet="general_options">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_packages">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_packages">
+              <MappingFragment StoreEntitySet="general_packages">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="price_monthly" ColumnName="price_monthly" />
+                <ScalarProperty Name="price_annually" ColumnName="price_annually" />
+                <ScalarProperty Name="number_accounts" ColumnName="number_accounts" />
+                <ScalarProperty Name="is_default" ColumnName="is_default" />
+                <ScalarProperty Name="trial_day" ColumnName="trial_day" />
+                <ScalarProperty Name="permission" ColumnName="permission" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_payment_history">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_payment_history">
+              <MappingFragment StoreEntitySet="general_payment_history">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="transaction_id" ColumnName="transaction_id" />
+                <ScalarProperty Name="plan" ColumnName="plan" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_payment_subscriptions">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_payment_subscriptions">
+              <MappingFragment StoreEntitySet="general_payment_subscriptions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="billing_agreement_id" ColumnName="billing_agreement_id" />
+                <ScalarProperty Name="plan" ColumnName="plan" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_proxies">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_proxies">
+              <MappingFragment StoreEntitySet="general_proxies">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="limit" ColumnName="limit" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_purchase">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_purchase">
+              <MappingFragment StoreEntitySet="general_purchase">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="purchase_code" ColumnName="purchase_code" />
+                <ScalarProperty Name="version" ColumnName="version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_users">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_users">
+              <MappingFragment StoreEntitySet="general_users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="admin" ColumnName="admin" />
+                <ScalarProperty Name="login_type" ColumnName="login_type" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+                <ScalarProperty Name="timezone" ColumnName="timezone" />
+                <ScalarProperty Name="permission" ColumnName="permission" />
+                <ScalarProperty Name="settings" ColumnName="settings" />
+                <ScalarProperty Name="activation_key" ColumnName="activation_key" />
+                <ScalarProperty Name="reset_key" ColumnName="reset_key" />
+                <ScalarProperty Name="history_ip" ColumnName="history_ip" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="instagram_accounts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_accounts">
+              <MappingFragment StoreEntitySet="instagram_accounts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="proxy" ColumnName="proxy" />
+                <ScalarProperty Name="default_proxy" ColumnName="default_proxy" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="instagram_activities">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_activities">
+              <MappingFragment StoreEntitySet="instagram_activities">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="settings" ColumnName="settings" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="instagram_activities_log">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_activities_log">
+              <MappingFragment StoreEntitySet="instagram_activities_log">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="media_id" ColumnName="media_id" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="instagram_analytics">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_analytics">
+              <MappingFragment StoreEntitySet="instagram_analytics">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="next_action" ColumnName="next_action" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="instagram_analytics_stats">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_analytics_stats">
+              <MappingFragment StoreEntitySet="instagram_analytics_stats">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="instagram_posts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_posts">
+              <MappingFragment StoreEntitySet="instagram_posts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="time_post" ColumnName="time_post" />
+                <ScalarProperty Name="delay" ColumnName="delay" />
+                <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="instagram_sessions">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.instagram_sessions">
+              <MappingFragment StoreEntitySet="instagram_sessions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="settings" ColumnName="settings" />
+                <ScalarProperty Name="cookies" ColumnName="cookies" />
+                <ScalarProperty Name="last_modified" ColumnName="last_modified" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="linkedin_accounts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.linkedin_accounts">
+              <MappingFragment StoreEntitySet="linkedin_accounts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="access_token" ColumnName="access_token" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="linkedin_posts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.linkedin_posts">
+              <MappingFragment StoreEntitySet="linkedin_posts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="time_post" ColumnName="time_post" />
+                <ScalarProperty Name="delay" ColumnName="delay" />
+                <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pinterest_accounts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.pinterest_accounts">
+              <MappingFragment StoreEntitySet="pinterest_accounts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="login_type" ColumnName="login_type" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="app_id" ColumnName="app_id" />
+                <ScalarProperty Name="app_secret" ColumnName="app_secret" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="proxy" ColumnName="proxy" />
+                <ScalarProperty Name="default_proxy" ColumnName="default_proxy" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="access_token" ColumnName="access_token" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pinterest_posts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.pinterest_posts">
+              <MappingFragment StoreEntitySet="pinterest_posts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="board" ColumnName="board" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="time_post" ColumnName="time_post" />
+                <ScalarProperty Name="delay" ColumnName="delay" />
+                <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="twitter_accounts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.twitter_accounts">
+              <MappingFragment StoreEntitySet="twitter_accounts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="access_token" ColumnName="access_token" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="twitter_posts">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.twitter_posts">
+              <MappingFragment StoreEntitySet="twitter_posts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="time_post" ColumnName="time_post" />
+                <ScalarProperty Name="delay" ColumnName="delay" />
+                <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_sessions">
+            <EntityTypeMapping TypeName="OrgBubbleDbModel.general_sessions">
+              <MappingFragment StoreEntitySet="general_sessions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="data" ColumnName="data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

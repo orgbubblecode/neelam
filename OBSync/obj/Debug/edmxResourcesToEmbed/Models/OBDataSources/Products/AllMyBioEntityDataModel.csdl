@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AllMyBioDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="domain">
+    <Key>
+      <PropertyRef Name="domain_id" />
+    </Key>
+    <Property Name="domain_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="scheme" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="host" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="SByte" />
+    <Property Name="date" Type="DateTime" />
+    <NavigationProperty Name="user" Relationship="Self.domains_ibfk_1" FromRole="domains" ToRole="users" />
+  </EntityType>
+  <EntityType Name="link">
+    <Key>
+      <PropertyRef Name="link_id" />
+    </Key>
+    <Property Name="link_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="biolink_id" Type="Int32" />
+    <Property Name="domain_id" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="subtype" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="location_url" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="clicks" Type="Int32" Nullable="false" />
+    <Property Name="settings" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="order" Type="Int32" Nullable="false" />
+    <Property Name="start_date" Type="DateTime" />
+    <Property Name="end_date" Type="DateTime" />
+    <Property Name="is_enabled" Type="SByte" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="project" Relationship="Self.links_ibfk_2" FromRole="links" ToRole="projects" />
+    <NavigationProperty Name="user" Relationship="Self.links_ibfk_3" FromRole="links" ToRole="users" />
+    <NavigationProperty Name="track_links" Relationship="Self.track_links_ibfk_1" FromRole="links" ToRole="track_links" />
+  </EntityType>
+  <EntityType Name="package">
+    <Key>
+      <PropertyRef Name="package_id" />
+    </Key>
+    <Property Name="package_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="monthly_price" Type="Single" Nullable="false" />
+    <Property Name="annual_price" Type="Single" Nullable="false" />
+    <Property Name="settings" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="is_enabled" Type="SByte" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="payments" Relationship="Self.payments_ibfk_1" FromRole="packages" ToRole="payments" />
+  </EntityType>
+  <EntityType Name="page">
+    <Key>
+      <PropertyRef Name="page_id" />
+    </Key>
+    <Property Name="page_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="position" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="package_id" Type="Int32" />
+    <Property Name="processor" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="plan" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="payment_id" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="subscription_id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="payer_id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="Single" />
+    <Property Name="currency" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" />
+    <NavigationProperty Name="package" Relationship="Self.payments_ibfk_1" FromRole="payments" ToRole="packages" />
+    <NavigationProperty Name="user" Relationship="Self.payments_users_user_id_fk" FromRole="payments" ToRole="users" />
+  </EntityType>
+  <EntityType Name="project">
+    <Key>
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="project_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="links" Relationship="Self.links_ibfk_2" FromRole="projects" ToRole="links" />
+    <NavigationProperty Name="user" Relationship="Self.projects_ibfk_1" FromRole="projects" ToRole="users" />
+  </EntityType>
+  <EntityType Name="setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="key" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="track_links">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="link_id" Type="Int32" Nullable="false" />
+    <Property Name="dynamic_id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ip" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="location" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="os" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="browser" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="referer" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="last_date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="link" Relationship="Self.track_links_ibfk_1" FromRole="track_links" ToRole="links" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="token_code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="email_activation_code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="lost_password_code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="facebook_id" Type="Int64" />
+    <Property Name="instagram_id" Type="Int64" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Int32" Nullable="false" />
+    <Property Name="package_id" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="package_expiration_date" Type="DateTime" />
+    <Property Name="package_settings" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="package_trial_done" Type="SByte" />
+    <Property Name="payment_subscription_id" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" />
+    <Property Name="ip" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="last_activity" Type="DateTime" />
+    <Property Name="last_user_agent" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="total_logins" Type="Int32" />
+    <Property Name="language" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="domains" Relationship="Self.domains_ibfk_1" FromRole="users" ToRole="domains" />
+    <NavigationProperty Name="links" Relationship="Self.links_ibfk_3" FromRole="users" ToRole="links" />
+    <NavigationProperty Name="payments" Relationship="Self.payments_users_user_id_fk" FromRole="users" ToRole="payments" />
+    <NavigationProperty Name="projects" Relationship="Self.projects_ibfk_1" FromRole="users" ToRole="projects" />
+    <NavigationProperty Name="users_logs" Relationship="Self.users_logs_users_user_id_fk" FromRole="users" ToRole="users_logs" />
+  </EntityType>
+  <EntityType Name="users_logs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" />
+    <Property Name="ip" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="public" Type="Int32" />
+    <NavigationProperty Name="user" Relationship="Self.users_logs_users_user_id_fk" FromRole="users_logs" ToRole="users" />
+  </EntityType>
+  <Association Name="domains_ibfk_1">
+    <End Role="users" Type="Self.user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="domains" Type="Self.domain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="domains">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="links_ibfk_2">
+    <End Role="projects" Type="Self.project" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="links" Type="Self.link" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="projects">
+        <PropertyRef Name="project_id" />
+      </Principal>
+      <Dependent Role="links">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="links_ibfk_3">
+    <End Role="users" Type="Self.user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="links" Type="Self.link" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="links">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="track_links_ibfk_1">
+    <End Role="links" Type="Self.link" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="track_links" Type="Self.track_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="links">
+        <PropertyRef Name="link_id" />
+      </Principal>
+      <Dependent Role="track_links">
+        <PropertyRef Name="link_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="payments_ibfk_1">
+    <End Role="packages" Type="Self.package" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="payments" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="packages">
+        <PropertyRef Name="package_id" />
+      </Principal>
+      <Dependent Role="payments">
+        <PropertyRef Name="package_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="payments_users_user_id_fk">
+    <End Role="users" Type="Self.user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="payments" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="payments">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="projects_ibfk_1">
+    <End Role="users" Type="Self.user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="projects" Type="Self.project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="projects">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="users_logs_users_user_id_fk">
+    <End Role="users" Type="Self.user" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="users_logs" Type="Self.users_logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="users_logs">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AllMyBioDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="domains" EntityType="Self.domain" />
+    <EntitySet Name="links" EntityType="Self.link" />
+    <EntitySet Name="packages" EntityType="Self.package" />
+    <EntitySet Name="pages" EntityType="Self.page" />
+    <EntitySet Name="payments" EntityType="Self.payment" />
+    <EntitySet Name="projects" EntityType="Self.project" />
+    <EntitySet Name="settings" EntityType="Self.setting" />
+    <EntitySet Name="track_links" EntityType="Self.track_links" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="users_logs" EntityType="Self.users_logs" />
+    <AssociationSet Name="domains_ibfk_1" Association="Self.domains_ibfk_1">
+      <End Role="users" EntitySet="users" />
+      <End Role="domains" EntitySet="domains" />
+    </AssociationSet>
+    <AssociationSet Name="links_ibfk_2" Association="Self.links_ibfk_2">
+      <End Role="projects" EntitySet="projects" />
+      <End Role="links" EntitySet="links" />
+    </AssociationSet>
+    <AssociationSet Name="links_ibfk_3" Association="Self.links_ibfk_3">
+      <End Role="users" EntitySet="users" />
+      <End Role="links" EntitySet="links" />
+    </AssociationSet>
+    <AssociationSet Name="track_links_ibfk_1" Association="Self.track_links_ibfk_1">
+      <End Role="links" EntitySet="links" />
+      <End Role="track_links" EntitySet="track_links" />
+    </AssociationSet>
+    <AssociationSet Name="payments_ibfk_1" Association="Self.payments_ibfk_1">
+      <End Role="packages" EntitySet="packages" />
+      <End Role="payments" EntitySet="payments" />
+    </AssociationSet>
+    <AssociationSet Name="payments_users_user_id_fk" Association="Self.payments_users_user_id_fk">
+      <End Role="users" EntitySet="users" />
+      <End Role="payments" EntitySet="payments" />
+    </AssociationSet>
+    <AssociationSet Name="projects_ibfk_1" Association="Self.projects_ibfk_1">
+      <End Role="users" EntitySet="users" />
+      <End Role="projects" EntitySet="projects" />
+    </AssociationSet>
+    <AssociationSet Name="users_logs_users_user_id_fk" Association="Self.users_logs_users_user_id_fk">
+      <End Role="users" EntitySet="users" />
+      <End Role="users_logs" EntitySet="users_logs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="orgbubble_data_viewsModelStoreContainer" CdmEntityContainer="orgbubble_data_viewsEntities">
+    <EntitySetMapping Name="orgbubble_socialmedia_posts">
+      <EntityTypeMapping TypeName="orgbubble_data_viewsModel.orgbubble_socialmedia_posts">
+        <MappingFragment StoreEntitySet="orgbubble_socialmedia_posts">
+          <ScalarProperty Name="socialmedia" ColumnName="socialmedia" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ids" ColumnName="ids" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="category_or_type" ColumnName="category_or_type" />
+          <ScalarProperty Name="group" ColumnName="group" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="time_post" ColumnName="time_post" />
+          <ScalarProperty Name="delay" ColumnName="delay" />
+          <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orgbubble_socialmedia_accounts">
+      <EntityTypeMapping TypeName="orgbubble_data_viewsModel.orgbubble_socialmedia_accounts">
+        <MappingFragment StoreEntitySet="orgbubble_socialmedia_accounts">
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="changed" ColumnName="changed" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="socialmedia" ColumnName="socialmedia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

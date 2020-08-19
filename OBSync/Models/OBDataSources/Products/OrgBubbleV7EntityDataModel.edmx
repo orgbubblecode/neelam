@@ -1,0 +1,1081 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="orgbubble_dbv7Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sp_account_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="social_network" Type="mediumtext" />
+          <Property Name="category" Type="mediumtext" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="login_type" Type="int" />
+          <Property Name="can_post" Type="int" />
+          <Property Name="pid" Type="mediumtext" />
+          <Property Name="name" Type="mediumtext" />
+          <Property Name="username" Type="mediumtext" />
+          <Property Name="token" Type="mediumtext" />
+          <Property Name="avatar" Type="mediumtext" />
+          <Property Name="url" Type="mediumtext" />
+          <Property Name="data" Type="mediumtext" />
+          <Property Name="proxy" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sp_caption">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="content" Type="mediumtext" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sp_coupon_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="name" Type="mediumtext" />
+          <Property Name="code" Type="mediumtext" />
+          <Property Name="type" Type="mediumtext" />
+          <Property Name="price" Type="float" />
+          <Property Name="expiration_date" Type="datetime" Precision="0" />
+          <Property Name="packages" Type="mediumtext" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sp_file_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="name" Type="mediumtext" />
+          <Property Name="file" Type="mediumtext" />
+          <Property Name="type" Type="mediumtext" />
+          <Property Name="extension" Type="mediumtext" />
+          <Property Name="size" Type="float" />
+          <Property Name="is_image" Type="int" />
+          <Property Name="width" Type="int" />
+          <Property Name="height" Type="int" />
+          <Property Name="note" Type="mediumtext" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sp_group_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="name" Type="text" />
+          <Property Name="data" Type="text" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sp_instagram_activities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="pid" Type="int" />
+          <Property Name="account" Type="text" />
+          <Property Name="action" Type="longtext" />
+          <Property Name="time" Type="int" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="settings" Type="longtext" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="int" />
+          <Property Name="created" Type="int" />
+        </EntityType>
+        <EntityType Name="sp_instagram_activities_log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="pid" Type="int" />
+          <Property Name="action" Type="text" />
+          <Property Name="user_id" Type="text" />
+          <Property Name="media_id" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="created" Type="int" />
+        </EntityType>
+        <EntityType Name="sp_instagram_analytics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="account" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="next_action" Type="int" />
+        </EntityType>
+        <EntityType Name="sp_instagram_analytics_stats">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="account" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="date" Type="int" />
+        </EntityType>
+        <EntityType Name="sp_instagram_sessions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="settings" Type="mediumblob" />
+          <Property Name="cookies" Type="mediumblob" />
+          <Property Name="last_modified" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sp_language">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="code" Type="mediumtext" />
+          <Property Name="slug" Type="mediumtext" />
+          <Property Name="text" Type="mediumtext" />
+        </EntityType>
+        <EntityType Name="sp_language_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="name" Type="mediumtext" />
+          <Property Name="code" Type="mediumtext" />
+          <Property Name="icon" Type="mediumtext" />
+          <Property Name="is_default" Type="int" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="sp_options">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="longtext" Nullable="false" />
+          <Property Name="value" Type="longtext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sp_package_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="name" Type="mediumtext" />
+          <Property Name="description" Type="mediumtext" />
+          <Property Name="type" Type="int" />
+          <Property Name="price_monthly" Type="float" />
+          <Property Name="price_annually" Type="float" />
+          <Property Name="number_accounts" Type="int" />
+          <Property Name="trial_day" Type="int" />
+          <Property Name="popular" Type="int" />
+          <Property Name="position" Type="int" />
+          <Property Name="permissions" Type="mediumtext" />
+          <Property Name="data" Type="mediumtext" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sp_payment_history">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="package" Type="int" />
+          <Property Name="type" Type="text" />
+          <Property Name="transaction_id" Type="text" />
+          <Property Name="plan" Type="int" />
+          <Property Name="amount" Type="float" />
+          <Property Name="created" Type="int" />
+        </EntityType>
+        <EntityType Name="sp_payment_subscriptions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="uid" Type="int" />
+          <Property Name="package" Type="int" />
+          <Property Name="type" Type="text" />
+          <Property Name="subscription_id" Type="text" />
+          <Property Name="customer_id" Type="text" />
+          <Property Name="plan" Type="int" />
+          <Property Name="created" Type="int" />
+        </EntityType>
+        <EntityType Name="sp_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="account_id" Type="int" />
+          <Property Name="social_network" Type="text" />
+          <Property Name="category" Type="text" />
+          <Property Name="type" Type="text" />
+          <Property Name="data" Type="longtext" />
+          <Property Name="time_post" Type="int" />
+          <Property Name="time_delete" Type="int" />
+          <Property Name="delay" Type="int" />
+          <Property Name="repost_frequency" Type="int" />
+          <Property Name="repost_until" Type="int" />
+          <Property Name="result" Type="text" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sp_proxy_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="address" Type="text" />
+          <Property Name="location" Type="text" />
+          <Property Name="limit" Type="text" />
+          <Property Name="packages" Type="text" />
+          <Property Name="active" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sp_purchase_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="text" />
+          <Property Name="item_id" Type="text" />
+          <Property Name="purchase_code" Type="text" />
+          <Property Name="version" Type="text" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.orgbubble_dbv7.sp_sessions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="sp_sessions">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="ip_address" />
+            <PropertyRef Name="timestamp" />
+            <PropertyRef Name="data" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="timestamp" Type="uint" Nullable="false" />
+          <Property Name="data" Type="blob" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sp_team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="owner" Type="int" />
+          <Property Name="pid" Type="int" />
+          <Property Name="permissions" Type="longtext" Nullable="false" />
+          <Property Name="data" Type="longtext" />
+        </EntityType>
+        <EntityType Name="sp_team_member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="uid" Type="int" />
+          <Property Name="team_id" Type="int" />
+          <Property Name="permissions" Type="longtext" />
+        </EntityType>
+        <EntityType Name="sp_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ids" Type="mediumtext" />
+          <Property Name="pid" Type="text" />
+          <Property Name="role" Type="int" />
+          <Property Name="fullname" Type="mediumtext" />
+          <Property Name="email" Type="mediumtext" />
+          <Property Name="password" Type="mediumtext" />
+          <Property Name="package" Type="int" />
+          <Property Name="expiration_date" Type="date" />
+          <Property Name="timezone" Type="mediumtext" />
+          <Property Name="login_type" Type="mediumtext" />
+          <Property Name="data" Type="mediumtext" />
+          <Property Name="status" Type="int" />
+          <Property Name="changed" Type="datetime" Precision="0" />
+          <Property Name="created" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="orgbubble_dbv7ModelStoreContainer">
+          <EntitySet Name="sp_account_manager" EntityType="Self.sp_account_manager" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_caption" EntityType="Self.sp_caption" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_coupon_manager" EntityType="Self.sp_coupon_manager" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_file_manager" EntityType="Self.sp_file_manager" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_group_manager" EntityType="Self.sp_group_manager" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_instagram_activities" EntityType="Self.sp_instagram_activities" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_instagram_activities_log" EntityType="Self.sp_instagram_activities_log" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_instagram_analytics" EntityType="Self.sp_instagram_analytics" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_instagram_analytics_stats" EntityType="Self.sp_instagram_analytics_stats" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_instagram_sessions" EntityType="Self.sp_instagram_sessions" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_language" EntityType="Self.sp_language" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_language_category" EntityType="Self.sp_language_category" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_options" EntityType="Self.sp_options" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_package_manager" EntityType="Self.sp_package_manager" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_payment_history" EntityType="Self.sp_payment_history" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_payment_subscriptions" EntityType="Self.sp_payment_subscriptions" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_posts" EntityType="Self.sp_posts" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_proxy_manager" EntityType="Self.sp_proxy_manager" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_purchase_manager" EntityType="Self.sp_purchase_manager" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_team" EntityType="Self.sp_team" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_team_member" EntityType="Self.sp_team_member" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_users" EntityType="Self.sp_users" Schema="orgbubble_dbv7" store:Type="Tables" />
+          <EntitySet Name="sp_sessions" EntityType="Self.sp_sessions" store:Type="Tables" store:Schema="orgbubble_dbv7">
+            <DefiningQuery>SELECT
+`sp_sessions`.`id`, 
+`sp_sessions`.`ip_address`, 
+`sp_sessions`.`timestamp`, 
+`sp_sessions`.`data`
+FROM `sp_sessions` AS `sp_sessions`</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="orgbubble_dbv7Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sp_account_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="social_network" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="login_type" Type="Int32" />
+          <Property Name="can_post" Type="Int32" />
+          <Property Name="pid" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="token" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="avatar" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="proxy" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="sp_caption">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="content" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="sp_coupon_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Single" />
+          <Property Name="expiration_date" Type="DateTime" />
+          <Property Name="packages" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="sp_file_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="file" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="extension" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="size" Type="Single" />
+          <Property Name="is_image" Type="Int32" />
+          <Property Name="width" Type="Int32" />
+          <Property Name="height" Type="Int32" />
+          <Property Name="note" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="sp_group_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="sp_instagram_activities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="action" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="time" Type="Int32" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="settings" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="Int32" />
+          <Property Name="created" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sp_instagram_activities_log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="action" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="user_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="media_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="created" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sp_instagram_analytics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="next_action" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sp_instagram_analytics_stats">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="account" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sp_instagram_sessions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="settings" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="cookies" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="last_modified" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sp_language">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="slug" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="text" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sp_language_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="icon" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="is_default" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sp_options">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sp_package_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="Int32" />
+          <Property Name="price_monthly" Type="Single" />
+          <Property Name="price_annually" Type="Single" />
+          <Property Name="number_accounts" Type="Int32" />
+          <Property Name="trial_day" Type="Int32" />
+          <Property Name="popular" Type="Int32" />
+          <Property Name="position" Type="Int32" />
+          <Property Name="permissions" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="sp_payment_history">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="package" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="transaction_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="plan" Type="Int32" />
+          <Property Name="amount" Type="Single" />
+          <Property Name="created" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sp_payment_subscriptions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="package" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="subscription_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="customer_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="plan" Type="Int32" />
+          <Property Name="created" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sp_posts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="account_id" Type="Int32" />
+          <Property Name="social_network" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="time_post" Type="Int32" />
+          <Property Name="time_delete" Type="Int32" />
+          <Property Name="delay" Type="Int32" />
+          <Property Name="repost_frequency" Type="Int32" />
+          <Property Name="repost_until" Type="Int32" />
+          <Property Name="result" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="sp_proxy_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="location" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="limit" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="packages" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="sp_purchase_manager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="item_id" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="purchase_code" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="version" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sp_team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="owner" Type="Int32" />
+          <Property Name="pid" Type="Int32" />
+          <Property Name="permissions" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="data" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sp_team_member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="uid" Type="Int32" />
+          <Property Name="team_id" Type="Int32" />
+          <Property Name="permissions" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sp_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ids" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="pid" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="role" Type="Int32" />
+          <Property Name="fullname" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="package" Type="Int32" />
+          <Property Name="expiration_date" Type="DateTime" />
+          <Property Name="timezone" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="login_type" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="changed" Type="DateTime" />
+          <Property Name="created" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="sp_sessions">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="ip_address" />
+            <PropertyRef Name="timestamp" />
+            <PropertyRef Name="data" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="timestamp" Type="Int64" Nullable="false" />
+          <Property Name="data" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="OBV7Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sp_account_manager" EntityType="Self.sp_account_manager" />
+          <EntitySet Name="sp_caption" EntityType="Self.sp_caption" />
+          <EntitySet Name="sp_coupon_manager" EntityType="Self.sp_coupon_manager" />
+          <EntitySet Name="sp_file_manager" EntityType="Self.sp_file_manager" />
+          <EntitySet Name="sp_group_manager" EntityType="Self.sp_group_manager" />
+          <EntitySet Name="sp_instagram_activities" EntityType="Self.sp_instagram_activities" />
+          <EntitySet Name="sp_instagram_activities_log" EntityType="Self.sp_instagram_activities_log" />
+          <EntitySet Name="sp_instagram_analytics" EntityType="Self.sp_instagram_analytics" />
+          <EntitySet Name="sp_instagram_analytics_stats" EntityType="Self.sp_instagram_analytics_stats" />
+          <EntitySet Name="sp_instagram_sessions" EntityType="Self.sp_instagram_sessions" />
+          <EntitySet Name="sp_language" EntityType="Self.sp_language" />
+          <EntitySet Name="sp_language_category" EntityType="Self.sp_language_category" />
+          <EntitySet Name="sp_options" EntityType="Self.sp_options" />
+          <EntitySet Name="sp_package_manager" EntityType="Self.sp_package_manager" />
+          <EntitySet Name="sp_payment_history" EntityType="Self.sp_payment_history" />
+          <EntitySet Name="sp_payment_subscriptions" EntityType="Self.sp_payment_subscriptions" />
+          <EntitySet Name="sp_posts" EntityType="Self.sp_posts" />
+          <EntitySet Name="sp_proxy_manager" EntityType="Self.sp_proxy_manager" />
+          <EntitySet Name="sp_purchase_manager" EntityType="Self.sp_purchase_manager" />
+          <EntitySet Name="sp_team" EntityType="Self.sp_team" />
+          <EntitySet Name="sp_team_member" EntityType="Self.sp_team_member" />
+          <EntitySet Name="sp_users" EntityType="Self.sp_users" />
+          <EntitySet Name="sp_sessions" EntityType="Self.sp_sessions" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="orgbubble_dbv7ModelStoreContainer" CdmEntityContainer="OBV7Entities">
+          <EntitySetMapping Name="sp_account_manager">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_account_manager">
+              <MappingFragment StoreEntitySet="sp_account_manager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="social_network" ColumnName="social_network" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="login_type" ColumnName="login_type" />
+                <ScalarProperty Name="can_post" ColumnName="can_post" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="token" ColumnName="token" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="proxy" ColumnName="proxy" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_caption">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_caption">
+              <MappingFragment StoreEntitySet="sp_caption">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_coupon_manager">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_coupon_manager">
+              <MappingFragment StoreEntitySet="sp_coupon_manager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+                <ScalarProperty Name="packages" ColumnName="packages" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_file_manager">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_file_manager">
+              <MappingFragment StoreEntitySet="sp_file_manager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="file" ColumnName="file" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="extension" ColumnName="extension" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="is_image" ColumnName="is_image" />
+                <ScalarProperty Name="width" ColumnName="width" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_group_manager">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_group_manager">
+              <MappingFragment StoreEntitySet="sp_group_manager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_instagram_activities">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_instagram_activities">
+              <MappingFragment StoreEntitySet="sp_instagram_activities">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="settings" ColumnName="settings" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_instagram_activities_log">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_instagram_activities_log">
+              <MappingFragment StoreEntitySet="sp_instagram_activities_log">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="media_id" ColumnName="media_id" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_instagram_analytics">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_instagram_analytics">
+              <MappingFragment StoreEntitySet="sp_instagram_analytics">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="next_action" ColumnName="next_action" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_instagram_analytics_stats">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_instagram_analytics_stats">
+              <MappingFragment StoreEntitySet="sp_instagram_analytics_stats">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_instagram_sessions">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_instagram_sessions">
+              <MappingFragment StoreEntitySet="sp_instagram_sessions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="settings" ColumnName="settings" />
+                <ScalarProperty Name="cookies" ColumnName="cookies" />
+                <ScalarProperty Name="last_modified" ColumnName="last_modified" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_language">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_language">
+              <MappingFragment StoreEntitySet="sp_language">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="text" ColumnName="text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_language_category">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_language_category">
+              <MappingFragment StoreEntitySet="sp_language_category">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="is_default" ColumnName="is_default" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_options">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_options">
+              <MappingFragment StoreEntitySet="sp_options">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_package_manager">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_package_manager">
+              <MappingFragment StoreEntitySet="sp_package_manager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="price_monthly" ColumnName="price_monthly" />
+                <ScalarProperty Name="price_annually" ColumnName="price_annually" />
+                <ScalarProperty Name="number_accounts" ColumnName="number_accounts" />
+                <ScalarProperty Name="trial_day" ColumnName="trial_day" />
+                <ScalarProperty Name="popular" ColumnName="popular" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="permissions" ColumnName="permissions" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_payment_history">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_payment_history">
+              <MappingFragment StoreEntitySet="sp_payment_history">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="transaction_id" ColumnName="transaction_id" />
+                <ScalarProperty Name="plan" ColumnName="plan" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_payment_subscriptions">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_payment_subscriptions">
+              <MappingFragment StoreEntitySet="sp_payment_subscriptions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="subscription_id" ColumnName="subscription_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="plan" ColumnName="plan" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_posts">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_posts">
+              <MappingFragment StoreEntitySet="sp_posts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="social_network" ColumnName="social_network" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="time_post" ColumnName="time_post" />
+                <ScalarProperty Name="time_delete" ColumnName="time_delete" />
+                <ScalarProperty Name="delay" ColumnName="delay" />
+                <ScalarProperty Name="repost_frequency" ColumnName="repost_frequency" />
+                <ScalarProperty Name="repost_until" ColumnName="repost_until" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_proxy_manager">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_proxy_manager">
+              <MappingFragment StoreEntitySet="sp_proxy_manager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="limit" ColumnName="limit" />
+                <ScalarProperty Name="packages" ColumnName="packages" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_purchase_manager">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_purchase_manager">
+              <MappingFragment StoreEntitySet="sp_purchase_manager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="purchase_code" ColumnName="purchase_code" />
+                <ScalarProperty Name="version" ColumnName="version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_team">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_team">
+              <MappingFragment StoreEntitySet="sp_team">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="owner" ColumnName="owner" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="permissions" ColumnName="permissions" />
+                <ScalarProperty Name="data" ColumnName="data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_team_member">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_team_member">
+              <MappingFragment StoreEntitySet="sp_team_member">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="permissions" ColumnName="permissions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_users">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_users">
+              <MappingFragment StoreEntitySet="sp_users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ids" ColumnName="ids" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+                <ScalarProperty Name="timezone" ColumnName="timezone" />
+                <ScalarProperty Name="login_type" ColumnName="login_type" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sp_sessions">
+            <EntityTypeMapping TypeName="orgbubble_dbv7Model.sp_sessions">
+              <MappingFragment StoreEntitySet="sp_sessions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="data" ColumnName="data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

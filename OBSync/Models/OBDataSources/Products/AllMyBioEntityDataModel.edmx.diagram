@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="339bd5fc5c904a689d33811a9b79630e" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="AllMyBioDbModel.domain" Width="1.5" PointX="3.375" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllMyBioDbModel.link" Width="1.5" PointX="11.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllMyBioDbModel.package" Width="1.5" PointX="1" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllMyBioDbModel.page" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllMyBioDbModel.payment" Width="1.5" PointX="3.125" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllMyBioDbModel.project" Width="1.5" PointX="8.125" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllMyBioDbModel.setting" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllMyBioDbModel.track_links" Width="1.5" PointX="14" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllMyBioDbModel.user" Width="1.5" PointX="6.125" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllMyBioDbModel.users_logs" Width="1.5" PointX="8" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="AllMyBioDbModel.domains_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="AllMyBioDbModel.links_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="AllMyBioDbModel.links_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="AllMyBioDbModel.track_links_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="AllMyBioDbModel.payments_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="AllMyBioDbModel.payments_users_user_id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="AllMyBioDbModel.projects_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="AllMyBioDbModel.users_logs_users_user_id_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
